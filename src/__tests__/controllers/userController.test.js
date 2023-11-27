@@ -181,7 +181,6 @@ describe("../../controllers/userController", () => {
 
         const mockUser2 = {
           name: 'Test User 2',
-          email: 'test2@test2.com',
           password: 'password1234',
         };
 
