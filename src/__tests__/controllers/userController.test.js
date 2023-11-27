@@ -106,5 +106,22 @@ describe("../../controllers/userController", () => {
 
           expect(res.status).toHaveBeenCalledWith(200);
       });
+
+      it('Should not return a list of users', async () => {
+        const req = {};
+
+        const res = {
+          status: jest.fn().mockReturnThis(),
+          json: jest.fn(),
+        };
+
+        jest.spyOn(User, 'find').mockImplementation(() => {
+          throw new Error('error');
+        });
+  
+        await UserController.listUsers(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(500);
+    });
   });
 });
