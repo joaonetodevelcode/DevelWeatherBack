@@ -122,6 +122,38 @@ describe("../../controllers/userController", () => {
         await UserController.listUsers(req, res);
 
         expect(res.status).toHaveBeenCalledWith(500);
-    });
+      });
   });
+
+  describe("userRegister Function", () => {
+
+    const mockUser = {
+      name: 'Test User',
+      email: 'test@test.com',
+      password: 'password123',
+    };
+
+    it('Should register a user', async () => {
+  
+        const req = {
+          body: {
+            name: mockUser.name,
+            email: mockUser.email,
+            password: mockUser.password,
+          },
+        };
+  
+        const res = {
+          status: jest.fn().mockReturnThis(),
+          json: jest.fn(),
+        };
+  
+        await UserController.userRegister(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(200);
+
+        await User.deleteOne({ email: mockUser.email });
+      });
+
+});
 });

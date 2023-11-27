@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701060768082" clover="3.2.0">
-  <project timestamp="1701060768082" name="All files">
-    <metrics statements="53" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="2" elements="66" coveredelements="18" complexity="0" loc="53" ncloc="53" packages="6" files="8" classes="8"/>
+<coverage generated="1701061353707" clover="3.2.0">
+  <project timestamp="1701061353708" name="All files">
+    <metrics statements="53" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="3" elements="66" coveredelements="23" complexity="0" loc="53" ncloc="53" packages="6" files="8" classes="8"/>
     <package name="DevelWeatherBack">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="jest-mongodb-config.js" path="D:\Develcode\projetos\DevelWeather\DevelWeatherBack\jest-mongodb-config.js">
@@ -30,9 +30,9 @@
       </file>
     </package>
     <package name="DevelWeatherBack.src.controllers">
-      <metrics statements="27" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2"/>
+      <metrics statements="27" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
       <file name="userController.js" path="D:\Develcode\projetos\DevelWeather\DevelWeatherBack\src\controllers\userController.js">
-        <metrics statements="27" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2"/>
+        <metrics statements="27" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
         <line num="6" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
@@ -45,10 +45,10 @@
         <line num="22" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
