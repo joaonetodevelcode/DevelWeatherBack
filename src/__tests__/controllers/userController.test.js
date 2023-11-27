@@ -50,6 +50,26 @@ describe("../../controllers/userController", () => {
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith({ message: 'Usuario encontrado', user: expect.any(Object) });
           });
+
+          it('Should not log in when entering the incorrect email or password', async () => {
+      
+            const req = {
+              body: {
+                email: "email@email.com",
+                password: mockUser.password,
+              },
+            };
+      
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+      
+            await UserController.userLogin(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(200);
+            expect(res.json).toHaveBeenCalledWith({message: 'Usuario não encontrado'});
+          });
     
     });
 });
