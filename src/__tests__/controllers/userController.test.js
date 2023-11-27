@@ -13,6 +13,7 @@ describe("../../controllers/userController", () => {
 
     afterEach(async () => {
         await mongoose.connection.close();
+        jest.restoreAllMocks()
     });
 
     describe("userLogin Function", () => {
@@ -28,7 +29,7 @@ describe("../../controllers/userController", () => {
         })
 
         afterEach(async() => {
-          await User.deleteOne({ email: mockUser.email });
+          await User.deleteOne({ email: mockUser.email });          
         })
 
         it('Should log in when entering the correct email and password', async () => {
@@ -170,5 +171,47 @@ describe("../../controllers/userController", () => {
         expect(res.status).toHaveBeenCalledWith(500);
       });
 
-});
+      describe("userUpdate Function", () => {
+
+        const mockUser = {
+          name: 'Test User',
+          email: 'test@test.com',
+          password: 'password123',
+        };
+
+        const mockUser2 = {
+          name: 'Test User 2',
+          email: 'test2@test2.com',
+          password: 'password1234',
+        };
+
+        beforeEach(async () => {
+          await User.create(mockUser);
+        })
+
+        afterEach(async() => {
+          await User.deleteOne({ email: mockUser.email });
+        })
+
+        it('Should update a user', async () => {
+            const user =  await User.findOne({ email: mockUser.email})
+            const userId = user._id
+
+            const req = {
+              params: {id: userId},
+              body: mockUser2,
+            };
+      
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+      
+            await UserController.userUpdate(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(200);
+            expect(res.json).toHaveBeenCalledWith({message: "Usuario atualizado com sucesso"});
+          });
+      });
+  });
 });
