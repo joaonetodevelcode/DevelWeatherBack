@@ -70,6 +70,25 @@ describe("../../controllers/userController", () => {
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith({message: 'Usuario não encontrado'});
           });
+
+          it('Should handle userLogin error', async () => {
+            const req = {
+              body: {},
+            };
+          
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+          
+            jest.spyOn(User, 'findOne').mockImplementation(() => {
+              throw new Error('Simulated error');
+            });
+          
+            await UserController.userLogin(req, res);
+          
+            expect(res.status).toHaveBeenCalledWith(500);
+          });
     
     });
 });
