@@ -212,6 +212,72 @@ describe("../../controllers/userController", () => {
             expect(res.status).toHaveBeenCalledWith(200);
             expect(res.json).toHaveBeenCalledWith({message: "Usuario atualizado com sucesso"});
           });
+
+          it('Should not update a user', async () => {
+            const req = {
+              body: {},
+            };
+          
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+          
+            await UserController.userUpdate(req, res);
+          
+            expect(res.status).toHaveBeenCalledWith(500);
+          });
+      });
+
+      describe("userDelete Function", () => {
+
+        const mockUser = {
+          name: 'Test User',
+          email: 'test@test.com',
+          password: 'password123',
+        };
+
+        beforeEach(async () => {
+          await User.create(mockUser);
+        })
+
+        afterEach(async() => {
+          await User.deleteOne({ email: mockUser.email });
+        })
+
+        it('Should delete a user', async () => {
+            const user =  await User.findOne({ email: mockUser.email})
+            const userId = user._id
+
+            const req = {
+              params: {id: userId}
+            };
+      
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+      
+            await UserController.userDelete(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(200);
+            expect(res.json).toHaveBeenCalledWith({message: "Usuario deletado com sucesso"});
+          });
+
+          it('Should not delete a user', async () => {
+            const req = {
+              body: {},
+            };
+          
+            const res = {
+              status: jest.fn().mockReturnThis(),
+              json: jest.fn(),
+            };
+          
+            await UserController.userDelete(req, res);
+          
+            expect(res.status).toHaveBeenCalledWith(500);
+          });
       });
   });
 });
