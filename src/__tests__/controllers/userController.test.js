@@ -155,5 +155,20 @@ describe("../../controllers/userController", () => {
         await User.deleteOne({ email: mockUser.email });
       });
 
+      it('Should not register a user', async () => {
+        const req = {
+          body: {},
+        };
+      
+        const res = {
+          status: jest.fn().mockReturnThis(),
+          json: jest.fn(),
+        };
+      
+        await UserController.userRegister(req, res);
+      
+        expect(res.status).toHaveBeenCalledWith(500);
+      });
+
 });
 });
