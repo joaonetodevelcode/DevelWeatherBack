@@ -91,4 +91,20 @@ describe("../../controllers/userController", () => {
           });
     
     });
+
+    describe("listUsers Function", () => {
+
+      it('Should return a list of users', async () => {
+          const req = {};
+
+          const res = {
+            status: jest.fn().mockReturnThis(),
+            json: jest.fn(),
+          };
+    
+          await UserController.listUsers(req, res);
+
+          expect(res.status).toHaveBeenCalledWith(200);
+      });
+  });
 });
