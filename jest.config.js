@@ -14,6 +14,6 @@ export default {
     "!**/jest.setup.js",
     "!**/jest.config.js"
     ],
-    preset: "@shelf/jest-mongodb"
+    preset: "@shelf/jest-mongodb",
   };
   
