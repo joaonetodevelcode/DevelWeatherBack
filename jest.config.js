@@ -12,7 +12,10 @@ export default {
     "!**/node_modules/**",
     "!**/babel.config.js",
     "!**/jest.setup.js",
-    "!**/jest.config.js"
+    "!**/jest.config.js",
+    "!**/jest-mongodb-config.js",
+    "!**/server.js",
+    "!**/app.js"
     ],
     preset: "@shelf/jest-mongodb",
   };
