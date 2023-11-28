@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701116113040" clover="3.2.0">
-  <project timestamp="1701116113040" name="All files">
-    <metrics statements="53" coveredstatements="39" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="7" elements="66" coveredelements="48" complexity="0" loc="53" ncloc="53" packages="6" files="8" classes="8"/>
+<coverage generated="1701136438563" clover="3.2.0">
+  <project timestamp="1701136438563" name="All files">
+    <metrics statements="53" coveredstatements="41" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="8" elements="66" coveredelements="51" complexity="0" loc="53" ncloc="53" packages="6" files="8" classes="8"/>
     <package name="DevelWeatherBack">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="jest-mongodb-config.js" path="D:\Develcode\projetos\DevelWeather\DevelWeatherBack\jest-mongodb-config.js">
@@ -63,11 +63,11 @@
       </file>
     </package>
     <package name="DevelWeatherBack.src.database">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="dbConnection.js" path="D:\Develcode\projetos\DevelWeather\DevelWeatherBack\src\database\dbConnection.js">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
       </file>
     </package>
     <package name="DevelWeatherBack.src.models">
